@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
@@ -8,10 +8,13 @@ import Feelings from '../Feelings/Feelings.js';
 import Understanding from '../Understanding/Understanding.js';
 import Support from '../Support/Support.js';
 import Comments from '../Comments/Comments.js';
+import ThankYou from '../ThankYou/ThankYou.js';
+import Submit from '../Submit/Submit.js';
 
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
@@ -29,6 +32,7 @@ class App extends Component {
         <Support />
         <Comments />*/}
       </div>
+      </Router>
     );
   }
 }

@@ -54,8 +54,8 @@ class Feeling extends Component {
 }
 
 
-const mapReduxStateToProps = (reduxState) => {
+const mapStateToProps = (reduxState) => {
   return reduxState;
 }
 
-export default withRounter(connect(mapReduxStateToProps)(Feeling));
+export default withRouter(connect(mapStateToProps)(Feeling));

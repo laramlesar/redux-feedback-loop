@@ -7,13 +7,13 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-{/*state = {
+let feedback = {
 
     feeling: 0,
     understanding: 0,
     support: 0,
     comments: ''
-}*/}
+}
 
 
 const feedbackReducer =(state = feedback, action) => {
