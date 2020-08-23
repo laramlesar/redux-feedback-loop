@@ -23,6 +23,7 @@ class Understanding extends Component{
     
         
 }
+}
 
 
 
