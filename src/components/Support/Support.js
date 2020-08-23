@@ -33,7 +33,7 @@ class Support extends Component{
         <div>
             <h2>How well are you being supported?</h2>
             <p>Support</p>
-            <select value={this.state.feeling} onChange={this.handleFeelings}>
+            <select value={this.state.feeling} onChange={this.handleSupport}>
                 <option value=""></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -62,4 +62,4 @@ const mapStateToProps = (reduxState) => {
 
 
 
-export default connect(mapStateToProps)(Support);
+export default withRouter(connect(mapStateToProps)(Support));

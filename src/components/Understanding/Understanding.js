@@ -32,7 +32,7 @@ class Understanding extends Component{
           <div>
           <h2>How are you understanding the content?</h2>
           <p>Understanding?</p>
-          <select value={this.state.understanding} onChange={this.handleChange}>
+          <select value={this.state.understanding} onChange={this.handleUnderstanding}>
               <option value=""></option>
               <option value="1">1</option>
               <option value="2">2</option>

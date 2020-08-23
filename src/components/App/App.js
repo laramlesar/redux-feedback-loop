@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Feelings from '../Feelings/Feelings.js';
 import Understanding from '../Understanding/Understanding.js';
@@ -22,15 +22,12 @@ class App extends Component {
         </header>
         <br/>
         <Route exact path="/" component={Feelings} />
-        <Route exact path="/understanding" component={Understanding} />
-        <Route exact path="/support" component={Support} />
-        <Route exact path="/comments" component={Comments} />
-        <Route exact path="/thankyou" component={ThankYou} />
-        <Route exact path="/submit" component={Submit} />
-        {/*<Feelings />
-        <Understanding />
-        <Support />
-        <Comments />*/}
+        <Route path="/understanding" component={Understanding} />
+        <Route path="/support" component={Support} />
+        <Route path="/comments" component={Comments} />
+        <Route path="/thankyou" component={ThankYou} />
+        <Route path="/submit" component={Submit} />
+        
       </div>
       </Router>
     );

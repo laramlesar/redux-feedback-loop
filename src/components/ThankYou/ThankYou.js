@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom';
 class ThankYou extends Component {
 
     submitFeedback = () => {
-        axios.post('/feedback', this.props.feedbackReducer)
+        axios.post('/feelings', this.props.feedbackReducer)
             .then(() => {
                 console.log('Feedbback yay: ', this.props.feedbackReducer);
             })
@@ -40,7 +40,7 @@ class ThankYou extends Component {
     render() {
         return (
             <div>
-                <h2>Final Feedback</h2>
+                <h2>It's the Final Feedback</h2>
                 <div className="Review-table">
                 <table>
                     <thead>
@@ -54,22 +54,22 @@ class ThankYou extends Component {
                         <tr>
                             <td>Feeling</td>
                             <td>{this.props.feedbackReducer.feeling}</td>
-                            <td><button onClick={() => this.handleFeedback("feeling")}>Update</button></td>
+                           
                         </tr>
                         <tr>
                             <td>Understanding</td>
                             <td>{this.props.feedbackReducer.understanding}</td>
-                            <td><button onClick={() => this.handleFeedback("understanding")}>Update</button></td>
+                            
                         </tr>
                         <tr>
                             <td>Support</td>
                             <td>{this.props.feedbackReducer.support}</td>
-                            <td><button onClick={() => this.handleFeedback("support")}>Update</button></td>
+                            
                         </tr>
                         <tr>
                             <td>Comments</td>
                             <td>{this.props.feedbackReducer.comments}</td>
-                            <td><button onClick={() => this.handleFeedback("comments")}>Update</button></td>
+                            
                         </tr>
                     </tbody>
                 </table>
