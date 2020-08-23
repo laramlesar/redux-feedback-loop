@@ -1,24 +1,52 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class Understanding extends Component{
-  handleUnderstanding = (event) => {
-    this.props.dispatch({type: 'SET_FEEDBACK', payload: event.target.name})
+  state = {
+    understanding: ''
   }
+  
+  handleUnderstanding = (event) => {
+    console.log('understanding is good');
+    this.setState({
+        understanding: event.target.value,
+    })
+}
 
   handleClick = () => {
-    this.props.history.push('/support');
+    if (this.state.understanding === '') {
+      alert('Enter understanding before proceeding.  Understood?')
+  } else {
+      this.props.dispatch({
+          type: 'SET_UNDERSTANDING',
+          payload: this.state.understanding,
+      })
+      this.props.history.push('/support')
+      //where it goes next
+  }
+    
   }
     render(){
         return(
-            <div>
-            <h2>How are you understanding the content?</h2>
-            <label for="understanding">Understanding (between 1 and 5):</label>
-            <input onChange={this.handleUnderstanding} type="number" name="Understanding" />
-            <button onClick={this.handleClick}>NEXT!</button>
+          <div>
+          <h2>How are you understanding the content?</h2>
+          <p>Understanding?</p>
+          <select value={this.state.understanding} onChange={this.handleChange}>
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select>
+
+          <div>
+              <button onClick={this.handleClick}>Next</button>
+          </div>
+
+      </div>
             
-            
-            </div>
         )
     
         
@@ -28,9 +56,7 @@ class Understanding extends Component{
 
 
 const mapStateToProps = (reduxState) => {
-    return {
-      reduxState
-    }
-  }
+  return reduxState;
+}
 
-export default connect(mapStateToProps)(Understanding);
+export default withRouter(connect(mapStateToProps)(Understanding));

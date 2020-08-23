@@ -1,29 +1,58 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 class Support extends Component{
+  state = {
+    support: ''
+  }
+
+
   handleSupport = (event) => {
-    this.props.dispatch({type: 'SET_FEEDBACK', payload: event.target.name})
+    console.log('so supportive');
+        this.setState({
+            support: event.target.value,
+        })
   }
 
   handleClick = () => {
-    this.props.history.push('/comments');
+    if (this.state.support === '') {
+      alert('Must answer before proceedin')
+  } else {
+      this.props.dispatch({
+          type: 'SET_SUPPORT',
+          payload: this.state.support,
+      })
+      this.props.history.push('/comments')
+      //where it goes next
+      }
   }
-    render(){
-        return(
-            <div>
+
+  render() {
+    return (
+        <div>
             <h2>How well are you being supported?</h2>
-            <label for="support">Support (between 1 and 5):</label>
-            <input onChange={this.handleSupport} type="number" name="Support" />
-            <button onClick={this.handleClick}>NEXT!</button>
-            
-            
+            <p>Support</p>
+            <select value={this.state.feeling} onChange={this.handleFeelings}>
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <div>
+                <button onClick={this.handleClick}>Next</button>
             </div>
-        )
-        
-            }
+
             
+
+        </div>
+    );
+  }
 }
+    
 
 const mapStateToProps = (reduxState) => {
   return {
