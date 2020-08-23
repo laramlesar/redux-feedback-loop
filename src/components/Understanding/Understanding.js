@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Understanding extends Component{
-    render()
-    console.log('understanding things');
+    render(){
         return{
 
+        }
+
     }
+    
+        
 }
 
 

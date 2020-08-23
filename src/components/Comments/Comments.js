@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Comments extends Component{
-    render()
-    console.log('yoyoyo i like comments');
+    render(){
         return{
 
+        }
+
     }
+    
+        
 }
 
 
+const mapStateToProps = (reduxStore) => ({
+    reduxStore
+  })
 
 
-
-export default connect()(Commetns);
+export default connect(mapStateToProps)(Comments);

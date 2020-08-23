@@ -6,8 +6,8 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import Feelings from '../Feelings/Feelings.js';
 import Understanding from '../Understanding/Understanding.js';
-import Support from '../Support/Support';
-import Comments from '..Comments/Comments.js';
+import Support from '../Support/Support.js';
+import Comments from '../Comments/Comments.js';
 
 class App extends Component {
   render() {
@@ -22,10 +22,10 @@ class App extends Component {
         <Route exact path="/understanding" component={Understanding} />
         <Route exact path="/support" component={Support} />
         <Route exact path="/comments" component={Comments} />
-        <Feelings />
+        {/*<Feelings />
         <Understanding />
         <Support />
-        <Comments />
+        <Comments />*/}
       </div>
     );
   }
@@ -37,4 +37,4 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps) App;
+export default connect(mapStateToProps) (App);

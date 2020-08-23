@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Support extends Component{
-    render()
-    console.log('so supportive');
+    render(){
+      
         return{
+          
+
+        }
 
     }
+    
+        
 }
 
 
